@@ -9,19 +9,29 @@ Compile and run the project:
 * Run the application using `mvn jetty:run`. 
 * Open `http://localhost:8080/` url in browser.
 
-It shows two empty pdf viewer widgets side by side. Buttons below demonstrate Java API capabilities.
+It shows two empty pdf viewer widgets side by side. Buttons below demonstrate Java API capabilities. `Change file` button loads pdf file from `/src/main/resources/` directory and shows it in component. 
 ![Two empty widgets](/screenshots/demo-empty.png?raw=true "Two empty widgets")
 
+You can load different pdf file into each component, test whether component reacts nicely when window is resized, search inside the pdf text, ...
+
+![Search inside pdf](/screenshots/demo-search.png?raw=true "Search inside document")
+
+... see document properties, zoom pdf ...
+
+![Show pdf properties](/screenshots/demo-document-properties.png?raw=true "Show pdf properties")
+
+... or open sidebar ...
+
+![Thumbnails in sidebar](/screenshots/demo-sidebar-thumbnails.png?raw=true "Thumbnails in sidebar")
 
 
+## Compile WAR
 To produce a deployable production mode WAR:
 - change productionMode to true in the servlet class configuration (nested in the UI class)
 - run "mvn clean package"
 - test the war file with "mvn jetty:run-war"
 
-Client-Side compilation
--------------------------
-
+## Client-Side compilation
 The generated maven project is using an automatically generated widgetset by default. 
 When you add a dependency that needs client-side compilation, the maven plugin will 
 automatically generate it for you. Your own client-side customisations can be added into
@@ -30,26 +40,3 @@ package "client".
 Debugging client side code
   - run "mvn vaadin:run-codeserver" on a separate console while the application is running
   - activate Super Dev Mode in the debug window of the application
-
-Developing a theme using the runtime compiler
--------------------------
-
-When developing the theme, Vaadin can be configured to compile the SASS based
-theme at runtime in the server. This way you can just modify the scss files in
-your IDE and reload the browser to see changes.
-
-To use the runtime compilation, open pom.xml and comment out the compile-theme 
-goal from vaadin-maven-plugin configuration. To remove a possibly existing 
-pre-compiled theme, run "mvn clean package" once.
-
-When using the runtime compiler, running the application in the "run" mode 
-(rather than in "debug" mode) can speed up consecutive theme compilations
-significantly.
-
-It is highly recommended to disable runtime compilation for production WAR files.
-
-Using Vaadin pre-releases
--------------------------
-
-If Vaadin pre-releases are not enabled by default, use the Maven parameter
-"-P vaadin-prerelease" or change the activation default value of the profile in pom.xml .

@@ -20,7 +20,7 @@ Buttons below demonstrate Java API capabilities. `Change file` button loads pdf 
 
 ![Show pdf properties](/screenshots/demo-document-properties.png?raw=true "Show pdf properties")
 
-... or open sidebar ...
+... or open sidebar with thumbnails ...
 
 ![Thumbnails in sidebar](/screenshots/demo-sidebar-thumbnails.png?raw=true "Thumbnails in sidebar")
 

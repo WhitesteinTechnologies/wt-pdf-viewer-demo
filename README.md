@@ -1,15 +1,18 @@
-wt-pdf-viewer-demo
-==============
+# wt-pdf-viewer-demo
 
-Template for a simple Vaadin application that only requires a Servlet 3.0 container to run.
+Demo project for [WT PDF Viewer Vaadin addon](https://vaadin.com/directory#!addon/wt-pdf-viewer). Source code for addon is in [wt-pdf-viewer](https://github.com/WhitesteinTechnologies/wt-pdf-viewer) repository.
 
 
-Workflow
-========
+## Usage
+Compile and run the project:
+* Compile the project using `mvn install` command. 
+* Run the application using `mvn jetty:run`. 
+* Open `http://localhost:8080/` url in browser.
 
-To compile the entire project, run "mvn install".
+It shows two empty pdf viewer widgets side by side. Buttons below demonstrate Java API capabilities.
+![Two empty widgets](/screenshots/demo-empty.png?raw=true "Two empty widgets")
 
-To run the application, run "mvn jetty:run" and open http://localhost:8080/ .
+
 
 To produce a deployable production mode WAR:
 - change productionMode to true in the servlet class configuration (nested in the UI class)

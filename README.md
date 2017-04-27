@@ -9,10 +9,11 @@ Compile and run the project:
 * Run the application using `mvn jetty:run`. 
 * Open `http://localhost:8080/` url in browser.
 
-It shows two empty pdf viewer widgets side by side. 
+It shows two empty pdf viewer widgets side by side. The buttons below are not part of the component, they are there to demonstrate Java API capabilities. 
+
 ![Two empty widgets](/screenshots/demo-empty.png?raw=true "Two empty widgets")
 
-Buttons below demonstrate Java API capabilities. `Change file` button loads pdf file from `/src/main/resources/` directory and shows it in component. You can load different pdf file into each component, test whether component reacts nicely when window is resized, search inside the pdf text, ...
+Use `Change file` button loads pdf file from `/src/main/resources/` directory and shows it in component. You can load different pdf file into each component, test whether component reacts nicely when window is resized, search inside the pdf text, ...
 
 ![Search inside pdf](/screenshots/demo-search.png?raw=true "Search inside document")
 

@@ -15,6 +15,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
+import com.vaadin.ui.Upload;
 import com.vaadin.ui.VerticalLayout;
 import com.whitestein.vaadin.widgets.wtpdfviewer.WTPdfViewer;
 
@@ -47,11 +48,13 @@ public class PdfDemoUI extends UI {
 		VerticalLayout totalLayout = new VerticalLayout(viewersLayout, controllPanelLayout);
 		totalLayout.setSizeFull();
 		totalLayout.setExpandRatio(viewersLayout, (float) 1.0);
+		
 		setContent(totalLayout);
 	}
 
 	private HorizontalLayout createControllPanel(final WTPdfViewer firstViewer, final WTPdfViewer secondViewer) {
 		VerticalLayout firstViewerButtonsLayout = controllButtons(firstViewer);
+		firstViewerButtonsLayout.addComponent(new Upload());
 		VerticalLayout secondViewerButtonsLayout = controllButtons(secondViewer);
 		HorizontalLayout controllPanelLayout = new HorizontalLayout(firstViewerButtonsLayout, secondViewerButtonsLayout);
 		controllPanelLayout.setWidth("100%");
